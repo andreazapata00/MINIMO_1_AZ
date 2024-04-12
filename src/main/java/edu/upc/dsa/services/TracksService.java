@@ -1,9 +1,11 @@
+
 package edu.upc.dsa.services;
 
 
-import edu.upc.dsa.TracksManager;
-import edu.upc.dsa.TracksManagerImpl;
-import edu.upc.dsa.models.Track;
+import edu.upc.dsa.Manager;
+import edu.upc.dsa.ManagerImpl;
+import edu.upc.dsa.models.Dron;
+import edu.upc.dsa.models.Piloto;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -13,17 +15,17 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.util.ArrayList;
 import java.util.List;
+
+/*
 
 @Api(value = "/tracks", description = "Endpoint to Track Service")
 @Path("/tracks")
 public class TracksService {
 
-    private TracksManager tm;
-
+    private Manager tm;/*
     public TracksService() {
-        this.tm = TracksManagerImpl.getInstance();
+        this.tm = ManagerImpl.getInstance();
         if (tm.size()==0) {
             this.tm.addTrack("La Barbacoa", "Georgie Dann");
             this.tm.addTrack("Despacito", "Luis Fonsi");
@@ -96,20 +98,21 @@ public class TracksService {
 
 
     @POST
-    @ApiOperation(value = "create a new Track", notes = "asdasd")
+    @ApiOperation(value = "create a new Dron", notes = "asdasd")
     @ApiResponses(value = {
-            @ApiResponse(code = 201, message = "Successful", response=Track.class),
+            @ApiResponse(code = 201, message = "Successful", response=Dron.class),
             @ApiResponse(code = 500, message = "Validation Error")
 
     })
 
     @Path("/")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response newTrack(Track track) {
+    public Response newTrack(Dron dron) {
 
-        if (track.getSinger()==null || track.getTitle()==null)  return Response.status(500).entity(track).build();
+        if (dron.getSinger()==null || track.getTitle()==null)  return Response.status(500).entity(track).build();
         this.tm.addTrack(track);
         return Response.status(201).entity(track).build();
     }
 
 }
+*/
