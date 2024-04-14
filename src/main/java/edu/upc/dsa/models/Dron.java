@@ -2,36 +2,30 @@ package edu.upc.dsa.models;
 
 import edu.upc.dsa.util.RandomUtils;
 
-import java.util.LinkedList;
-import java.util.Queue;
-
 public class Dron {
     private String Identificador;
     private String Nombre;
     private String Fabricante;
     private String Modelo;
     private int HorasVuelo;
-    private boolean Operativo;
-    private PlanVuelo flightPlan;
+    private int Estado; //Si está operativo:1 o no:0
+    private int Almacen; //Si está en almacen:1 o no:0
 
 
-    public Dron() {
-        this.Identificador = RandomUtils.getId();
-    }
-
-    public Dron(String id, String nombre, String fabricante, String modelo, int h_vuelo) {
-        this();
-        this.setId(id);
-        this.setNombre(nombre);
-        this.setFabricante(fabricante);
-        this.setModelo(modelo);
-        this.setHorasVuelo(h_vuelo);
+    public Dron(String id, String nombre, String fabricante, String modelo, int h_vuelo, int almacen, int estado) {
+        this.Identificador = id;
+        this.Nombre = nombre;
+        this.Fabricante = fabricante;
+        this.Modelo = modelo;
+        this.HorasVuelo = h_vuelo;
+        this.Almacen = almacen;
+        this.Estado = estado;
     }
 
     public String getId() {
         return Identificador;
     }
-    public void setId(String id) {this.Identificador=id;}
+    public void setId(String id) {this.Identificador = id; }
 
     public String getNombre() {
         return Nombre;
@@ -61,16 +55,21 @@ public class Dron {
         this.HorasVuelo = horas_vuelo;
     }
 
-    public PlanVuelo getPlanVuelo() {
-        return flightPlan;
+    public int getEstado() {
+        return Estado;
     }
-    public void setPlanVuelo(PlanVuelo flight) {
-        this.flightPlan = flight;
+    public void setEstado(int e) {
+        this.Estado = e;
     }
 
-    public boolean getOperativo() {
-        return Operativo;
+    public int getAlmacen() {
+        return Almacen;
     }
-    public void setOperativo(Boolean op) { this.Operativo = op;
+    public void setAlmacen(int a) {
+        this.Almacen= a;
     }
+
+
+
 }
+
